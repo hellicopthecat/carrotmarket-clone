@@ -1,8 +1,5 @@
 import {useState} from "react";
-
-function clss(...classnames: string[]) {
-  return classnames.join(" ");
-}
+import {clss} from "../../../util/util";
 
 export default function Enter() {
   const [method, setMethod] = useState<"Email Address" | "Phone Number">(
@@ -44,13 +41,14 @@ export default function Enter() {
           </div>
         </div>
         <form className="flex flex-col mt-8" action="">
-          <label htmlFor="" className="text-sm font-medium text-gray-700">
+          <label htmlFor="input" className="text-sm font-medium text-gray-700">
             {method === "Email Address" ? "Email Address" : null}
             {method === "Phone Number" ? "Phone Number" : null}
           </label>
           <div className="mt-2">
             {method === "Email Address" ? (
               <input
+                id="input"
                 className=" appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                 type="email"
                 required
@@ -62,10 +60,10 @@ export default function Enter() {
                   +82
                 </span>
                 <input
+                  id="input"
                   className=" appearance-none w-full px-3 py-2 border border-gray-300 rounded-r-md rounded-l-none shadow-sm placeholder-gray-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                   type="number"
                   name=""
-                  id=""
                   required
                 />
               </div>
