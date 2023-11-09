@@ -1,21 +1,36 @@
+import Link from "next/link";
 import {clss} from "../util/util";
 
 interface IProfileProps {
-  cls: string;
-  msg: string;
+  cls?: string;
+  profileImgSize: string;
+  userName: string;
+  userFont: string;
+  msg?: string;
+  msgFont: string;
 }
-export default function Profile({cls, msg}: IProfileProps) {
+export default function Profile({
+  cls = "",
+  profileImgSize,
+  userName,
+  userFont,
+  msg,
+  msgFont,
+}: IProfileProps) {
   return (
-    <div
-      className={clss(
-        cls,
-        "flex px-3 mb-3 cursor-pointer items-center space-x-3 py-3"
-      )}
-    >
-      <div className="w-10 h-10 rounded-full bg-slate-300" />
+    <div className={clss(cls, "flex items-center mb-3 space-x-3 py-3")}>
+      <div className={clss(profileImgSize, "rounded-full bg-slate-800")} />
       <div className="text-xs font-medium">
-        <p className="text-gray-700">Steve Jebs</p>
-        <p className="text-gray-400">{msg}</p>
+        <p className={clss(userFont)}>{userName}</p>
+        {!msg ? null : msg.includes("Edit profile") ? (
+          <Link
+            href={`/userprofile/${userName.replace(/\s/g, "_").toLowerCase()}`}
+          >
+            <p className={msgFont}>{msg}</p>
+          </Link>
+        ) : (
+          <p className={msgFont}>{msg}</p>
+        )}
       </div>
     </div>
   );

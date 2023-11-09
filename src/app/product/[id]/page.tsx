@@ -5,7 +5,14 @@ export default function ProductDetail() {
     <div className="px-4 py-10">
       <div className="mb-10">
         <div className="h-96 bg-gray-200" />
-        <Profile cls={"border-t border-b px-4"} msg={"View Profile &rarr;"} />
+        <Profile
+          cls={"border-t border-b px-4"}
+          profileImgSize="w-10 h-10"
+          userName="Steve Jebs"
+          userFont="text-gray-700"
+          msg={"View Profile &rarr;"}
+          msgFont="text-gray-400"
+        />
         <div className="mt-5">
           <h1 className="text-3xl font-bold text-gray-900"> Galaxy s50</h1>
           <span className="text-3xl mt-3 text-gray-800 block">$140</span>
