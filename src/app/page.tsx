@@ -2,6 +2,7 @@
 import {useState} from "react";
 import {clss} from "../../util/util";
 import {NavComp} from "../../components/layout";
+
 export default function Home() {
   const [method, setMethod] = useState<"Email Address" | "Phone Number">(
     "Email Address"
@@ -42,7 +43,11 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <form className="flex flex-col mt-8" action="">
+          <form
+            className="flex flex-col mt-8"
+            action="/product
+          "
+          >
             <label
               htmlFor="input"
               className="text-sm font-medium text-gray-700"

@@ -3,8 +3,8 @@ import {NavComp} from "../../../components/layout";
 
 export default function Product() {
   return (
-    <NavComp title="상품">
-      <div className=" flex flex-col py-10 space-y-5">
+    <NavComp title="상품" hasTabBar>
+      <div className=" flex flex-col py-16 space-y-5">
         {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
           <Link key={i} href={`/product/${i}`}>
             <div className="flex border-b pb-10 cursor-pointer justify-between">
